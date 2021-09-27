@@ -1,0 +1,44 @@
+{
+  "manifest_version": 2,
+
+  "name": "chrome-extension-vue-boilerplate",
+  "description": "A Chrome Extensions boilerplate using Vue 3, TypeScript and Webpack 5.",
+  "version": "0.0.1",
+
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/*"],
+      "js": ["js/vendor.js", "js/content_script.js"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "background": {
+    "scripts": ["js/vendor.js", "js/background.js", "hot-reload.js"]
+  },
+  "permissions": [
+    "https://www.google.com/*",
+    "storage",
+    "webRequest",
+    "webRequestBlocking",
+    "notifications",
+    "background",
+    "tabs",
+    "unlimitedStorage",
+    "storage",
+    "contextMenus",
+    "webNavigation",
+    "downloads",
+    "cookies"
+  ]
+}
