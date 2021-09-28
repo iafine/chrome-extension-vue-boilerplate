@@ -6,9 +6,12 @@
   "scripts": {
     "dev": "webpack --config build/webpack.dev.js --watch",
     "build": "webpack --config build/webpack.prod.js",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --fix",
+    "lint": "eslint '*/**/*.{js,ts,tsx}'",
     "clean": "rimraf dist",
-    "test": "npx jest"
+    "test": "npx jest",
+    "lint-staged": "cross-env PRE_COMMIT=true lint-staged",
+    "commitlint": "commitlint",
+    "postinstall": "husky install"
   },
   "author": "iafine",
   "license": "MIT",
@@ -22,6 +25,8 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
     "@soda/friendly-errors-webpack-plugin": "^1.8.0",
     "@types/chrome": "0.0.143",
     "@types/jest": "^26.0.24",
@@ -30,12 +35,15 @@
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
     "copy-webpack-plugin": "^9.0.1",
+    "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-prettier": "^4.0.0",
     "glob": "^7.1.6",
+    "husky": "^7.0.2",
     "jest": "^26.6.3",
+    "lint-staged": "^11.1.2",
     "prettier": "^2.4.1",
     "rimraf": "^3.0.2 ",
     "ts-jest": "^26.5.5",
