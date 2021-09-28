@@ -1,14 +1,18 @@
 {
     "compilerOptions": {
-        "strict": true,
-        "module": "commonjs",
-        "target": "es6",
-        "esModuleInterop": true,
-        "sourceMap": false,
-        "rootDir": "src",
-        "outDir": "dist/js",
-        "noEmitOnError": true,
-        "jsx": "react",
-        "typeRoots": [ "node_modules/@types" ],
-    }
-}
+      "target": "esnext",
+      "module": "esnext",
+      "strict": true,
+      "jsx": "preserve",
+      "importHelpers": true,
+      "moduleResolution": "node",
+      "experimentalDecorators": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "sourceMap": true,
+      "noImplicitAny": false, // 后期需要删除 https://daief.tech/2018-09-04/declaration-files-of-typescript.html
+      "baseUrl": ".",
+      "typeRoots": [ "node_modules/@types" ],
+    },
+    "exclude": ["node_modules"]
+  }
